@@ -1,0 +1,194 @@
+﻿
+<html>
+
+   
+    <head>
+        <title>Feedback Form</title>
+
+
+        <link href="style.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            function validate() {
+
+                var Firstname = document.getElementById('txtFirstName').value;
+                var address = document.getElementById('txtAddress').value;
+                var Email = document.getElementById('txtEmail').value;
+                var Telephoneno = document.getElementById('txtTelephoneno').value;
+                var comment = document.getElementById('txtComment').value;
+
+
+                if (Firstname == "") {
+                    alert("Enter First Name");
+                    document.getElementById("txtFirstName").focus();
+                    return false;
+                }
+
+                document.getElementById("txtEmail").focus();
+
+                if (Email == "") {
+
+                    document.getElementById("txtEmail").focus();
+                    alert("Enter Email");
+                    return false;
+                }
+                var emailPat = /^(\".*\"|[A-Za-z]\w*)@(\[\d{1,3}(\.\d{1,3}){3}]|[A-Za-z]\w*(\.[A-Za-z]\w*)+)$/;
+                var EmailmatchArray = Email.match(emailPat);
+
+                if (EmailmatchArray == null) {
+                    alert("Your email address seems incorrect. Please try again.");
+                    return false;
+                }
+                document.getElementById("txtTelephoneno").focus();
+                if (Telephoneno == "") {
+                    alert("Enter Telephone No.");
+                    return false;
+                }
+
+
+                var digits = "0123456789";
+                var temp;
+
+                for (var i = 0; i < document.getElementById("txtTelephoneno").value.length; i++) {
+                    temp = document.getElementById("txtTelephoneno").value.substring(i, i + 1);
+                    if (digits.indexOf(temp) == -1) {
+                        alert("Please enter valid telephone Number ");
+                        document.getElementById("txtTelephoneno").focus();
+                        return false;
+                    }
+                }
+
+
+                document.getElementById("txtAddress").focus();
+                if (address == "") {
+                    document.getElementById("txtAddress").focus();
+                    alert("Enter Address");
+                    return false;
+                }
+                document.getElementById("txtComment").focus();
+
+                if (comment == "") {
+                    document.getElementById("txtComment").focus();
+                    alert("Please enter your comment");
+
+                    return false;
+                }
+
+
+                alert("Thank you " + Firstname + "!!!!For Your Feedback ");
+
+
+            }
+        </script>
+
+    
+    
+        <style type="text/css">
+            .style1
+            {
+                font-size: large;
+            }
+            .style2
+            {
+                font-size: large;
+                text-align: right;
+            }
+            .style3
+            {
+                font-size: large;
+                text-align: center;
+            }
+        </style>
+
+    
+    
+    </head>
+
+    <body>
+    
+    <form id="myForm" name="myForm"  onsubmit="return validate();">
+    <div >
+        <div class="container"  >
+			
+            <header>
+            </header>       
+      <div  class="form">
+    		<form id="contactform"> 
+                
+
+                <h1 class="style3">
+                    <strong>Feedback Form</strong></h1>
+                <br />
+                <br />
+                
+
+                &nbsp;Please fillup the feedback form below<br />
+                <table class="style1">
+                    <tr>
+                        <td class="style2">
+                            Full Name</td>
+                        <td class="style1">
+                            <input id="txtFirstName" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Email</td>
+                        <td class="style1">
+                            <input id="txtEmail" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Telephone No.</td>
+                        <td class="style1">
+                            <input id="txtTelephoneno" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Address</td>
+                        <td class="style1">
+                            <input id="txtAddress" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Comment</td>
+                        <td class="style1">
+                            <input id="txtComment" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td class="style1">
+                            <input id="btnsubmit" type="submit" value="Submit" /></td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td class="style1">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            &nbsp;</td>
+                        <td class="style1">
+                            &nbsp;</td>
+                    </tr>
+                </table>
+&nbsp;<br />
+                
+&nbsp;<br />
+
+                
+&nbsp;&nbsp;<br>
+            &nbsp;</form> 
+</div>      
+</div>
+    </div>
+    
+    </form>
+    
+</body>
+  
+</html>
+ 
+
+
